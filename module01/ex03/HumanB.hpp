@@ -13,8 +13,8 @@ class HumanB
     public:
     HumanB(const std::string &nameB);
     ~HumanB() {}
-    const void attack() const;
-    void setweapon(weapon &weapon);
-}
+    void attack() const;
+    void setWeapon(Weapon &weapon);
+};
 
 #endif
