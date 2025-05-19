@@ -1,0 +1,74 @@
+why we use virtual in destructor
+plymorphisme
+why return pointer in copy assiengment operator
+constructor chainning
+base class assignment
+
+
+---------------------------------------------------
+Cat::Cat(const Cat& other) : Animal(other) {
+    std::cout << "[Cat Copy Constructor]\n";
+}
+You're saying:
+
+    "When I copy a Cat, I also want to copy everything 
+    from the Animal part of that Cat."
+
+Since Cat inherits from Animal, it has an Animal inside it.
+If you don’t explicitly call the base class's copy 
+constructor, C++ will call the default constructor, and 
+you’ll lose the values in the base class 
+(type, in this case).
+---------------------------------------------------
+
+---------------------------------------------------
+Objects created on the stack (local variables) 
+have their destructor called automatically when 
+they go out of scope.
+Objects created on the heap with new do NOT have 
+their destructor called automatically because they 
+live until you explicitly delete them
+---------------------------------------------------
+
+---------------------------------------------------
+What is assignment chaining?
+Assignment chaining is when you do multiple assignments 
+in a single line, like this: a = b = c;
+Why NOT left to right?
+
+If C++ evaluated it left to right, it would be:
+(a = b) = c;  // ❌ Doesn’t make sense, 
+because (a = b) is not an lvalue
+---------------------------------------------------
+
+-------------------------------------------------
+Scenario	Explicit base call needed?	Why?
+Constructor (default)	❌	Automatically called
+Constructor (with args)	✅	You must pass args
+Copy Constructor	✅	To copy base class fields
+Assignment Operator	✅	To copy base class fields
+Destructor	❌	Automatically called in reverse
+-------------------------------------------------
+
+-------------------------------------------------
+"The base is assigned to the dog object, but what 
+about the assignment operator of the dog itself?"
+The main reason you don’t manually assign base class attributes like type in the derived class assignment operator is to:
+1. Encapsulation and code reuse
+    The base class knows best how to copy its own 
+    members, especially if it has private members, 
+    complex logic, or future changes.
+
+    You reuse the base class assignment operator 
+    (Animal::operator=) to avoid duplicating code or 
+    breaking encapsulation.
+
+2. Maintainability
+    If the base class changes (e.g., you add 
+    new attributes), you only need to update the base 
+    class assignment operator.
+
+    The derived classes stay clean and don’t have to 
+    be aware of internal details of the base class.
+-------------------------------------------------
+
