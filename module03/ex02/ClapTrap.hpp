@@ -4,9 +4,10 @@
 #include <iostream>
 #include <string>
 
+
 class ClapTrap
 {
-    private:
+    protected:
         std::string Name;
         int HitPoints;
         int EnergyPoints;
@@ -15,18 +16,20 @@ class ClapTrap
         ClapTrap(std::string name);
         ClapTrap(const ClapTrap &other);
         ClapTrap& operator=(const ClapTrap &other);
-        ~ClapTrap();
+        virtual ~ClapTrap();
 
         // getters
+        std::string getName() const;
         int getHit() const;
         int getEnergy() const;
         int getAttack() const;
         // setters
+        void setName(std::string name);
         void setHit(int hit);
         void setEnergy(int energy);
         void setAttack(int attack);
         //
-        void attack(const std::string &target);
+        virtual void attack(const std::string &target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
 };

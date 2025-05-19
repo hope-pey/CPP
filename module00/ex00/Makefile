@@ -1,9 +1,9 @@
 NAME = megaphone
 
-CXX = g++ #-fsanitize=address -g3
+CXX = c++ #-fsanitize=address -g3
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS =	megaphone.cpp \
+SRCS =	megaphone.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

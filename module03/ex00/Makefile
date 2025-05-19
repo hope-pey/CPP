@@ -1,6 +1,6 @@
 NAME = trap
 
-CXX = g++ #-fsanitize=address -g3
+CXX = c++ #-fsanitize=address -g3
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS =	main.cpp ClapTrap.cpp \

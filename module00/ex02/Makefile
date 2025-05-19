@@ -1,6 +1,6 @@
 NAME = bank
 
-CXX = g++
+CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS =	tests.cpp Account.cpp \
