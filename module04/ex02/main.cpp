@@ -6,7 +6,7 @@
 
 int main()
 {
-    Animal *animal[4];//why
+    Animal *animal[4];
     int i = 0;
     while (i < 2){
         animal[i] = new Dog();

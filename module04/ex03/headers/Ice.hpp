@@ -3,8 +3,10 @@
 
 #include <iostream>
 #include <string>
+#include "ICharacter.hpp"
+#include "AMateria.hpp"//
 
-class Ice
+class Ice : public AMateria
 {
     // protected:
     //     std::string ice;
@@ -17,9 +19,7 @@ class Ice
 
         Ice &operator=(Ice const &other);
 
-        std::string const &getType() const;
-
-        Ice* clone() const = 0;
+        AMateria* clone() const;
         void use (ICharacter& target);
 };
 

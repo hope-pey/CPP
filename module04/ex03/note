@@ -1,0 +1,56 @@
+----------------------------------
+deep copy
+----------------------------------
+
+===========================================================
+🌟 1. AMateria
+
+🔹 This is an abstract interface — think of it like a blueprint or contract.
+🔹 It says: “All Materia must have some common behaviors like being used or copied.”
+🔹 But it doesn’t do anything itself — it just says what should be done, not how.
+
+🧠 Think of it like:
+
+    "All tools must be usable and duplicable. I won’t tell you how. That’s your job."
+===========================================================
+
+
+===========================================================
+❄️ 2. Ice and ❤️ Cure
+
+🔹 These are real, concrete versions of the abstract idea "Materia."
+🔹 They follow the AMateria blueprint.
+🔹 "Ice" might hurt someone with ice; "Cure" might heal them.
+🔹 They actually do something, unlike the blueprint.
+
+🧠 Think of it like:
+
+    If "AMateria" is a recipe, then "Ice" and "Cure" are real dishes made from that recipe.
+===========================================================
+
+
+===========================================================
+🧍 3. ICharacter and Character
+
+🔹 ICharacter is another interface — a blueprint for a character.
+🔹 It says: “A character should be able to wear Materia, use them, etc.”
+🔹 Character is a real person in your program that follows this blueprint.
+
+🧠 Think of it like:
+
+    "ICharacter" is the idea of a person (a job description).
+    "Character" is the actual person doing the job.
+===========================================================
+
+===========================================================
+📚 4. IMateriaSource and MateriaSource
+
+🔹 IMateriaSource is a blueprint for a factory or library of Materia.
+🔹 It says: “You should be able to learn new Materia and make copies.”
+🔹 MateriaSource is a real object that stores known Materia and creates new ones.
+
+🧠 Think of it like:
+
+    "IMateriaSource" is the idea of a Materia factory.
+    "MateriaSource" is the real factory that produces them.
+===========================================================
