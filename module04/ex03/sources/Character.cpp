@@ -1,10 +1,5 @@
 #include "../headers/Caracter.hpp"
 
-// Character::Character() : name("")
-// {
-//     std::cout << "Character default costructor" << std::endl;
-// }
-
 Character::Character(std::string const &name) : name(name)
 {
     int i = 0;
@@ -65,7 +60,6 @@ void Character::equip(AMateria* m){
     while (i < 4){
         if (!inventory[i]){
             inventory[i] = m;
-            // inventory[i] = m->clone();
             std::cout << this->name <<" added succesfully materia " << m->getType() << " at index " << i << std::endl;
             return ;
         }
@@ -81,6 +75,7 @@ void Character::unequip(int idx){
         return;
     }
     inventory[idx] = NULL;
+    std::cout << "unequip materia succesfully" << std::endl;
 }
 
 void Character::use(int idx, ICharacter& target){
