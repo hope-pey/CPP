@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 #include "ICharacter.hpp"
-#include "AMateria.hpp"//
+#include "AMateria.hpp"
 
 class Character : public ICharacter
 {
@@ -12,7 +12,7 @@ class Character : public ICharacter
         std::string name;
         AMateria* inventory[4];
     public:
-        // Character();
+        Character();
         Character(std::string const &name);
         Character(Character const &other);
         Character &operator=(Character const &other);

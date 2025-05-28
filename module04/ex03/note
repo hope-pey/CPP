@@ -54,3 +54,9 @@ deep copy
     "IMateriaSource" is the idea of a Materia factory.
     "MateriaSource" is the real factory that produces them.
 ===========================================================
+
+This exercise is about implementing a polymorphic system in C++
+using abstract classes, virtual functions, and deep copying
+Step 1: Define AMateria (Abstract Base Class)
+Define ICharacter Interface
+Concrete Materia Classes — Ice and Cure

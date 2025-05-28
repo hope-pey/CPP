@@ -10,7 +10,6 @@ Character::Character(std::string const &name) : name(name)
     std::cout << this->name << " Character default costructor" << std::endl;
 }
 
-
 Character::~Character(){
     int i = 0;
     while (i < 4)
@@ -41,7 +40,8 @@ Character &Character::operator=(Character const &other){
         int i = 0;
         while (i < 4)
         {
-            delete inventory[i];
+            if (inventory[i])
+                delete inventory[i];
             inventory[i] = other.inventory[i] ? other.inventory[i]->clone() : NULL;
             i++;
         }

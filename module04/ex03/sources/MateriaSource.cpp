@@ -23,7 +23,7 @@ MateriaSource &MateriaSource::operator=(MateriaSource const &other){
             i++;
         }
     }
-    std::cout << " assignment operator" << std::endl;    
+    std::cout << " assignment operator of materia source" << std::endl;    
     return (*this);
 }
 
@@ -44,21 +44,23 @@ void MateriaSource::learnMateria(AMateria* m){
     while (i < 4){
         if (!inv[i]){
             inv[i] = m;
-            std::cout << "Materia source added" << std::endl;
+            std::cout << "Materia source added of type " << m->getType() << std::endl;
             return;
         }
         i++;
     }
+    std::cout << "can't add materia" << std::endl;
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type){
     int i = 0;
     while (i < 4 && this->inv[i]){
         if (inv[i]->getType() == type){
-            std::cout << "Materia source created" << std::endl;
+            std::cout << "Materia source created of type " << inv[i]->getType() << std::endl;
             return (inv[i]->clone());
         }
         i++;
     }
+    std::cout << "there is no materia in this type" << std::endl;
     return (NULL);
 }
